@@ -57,7 +57,7 @@ const Signup = () => {
 
   const onSubmit = (data) => {
     if (data.length !== 0) {
-      window.location.href = "/success";
+      window.location.href = "./success";
     }
   };
   return (
