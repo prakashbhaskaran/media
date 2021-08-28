@@ -74,7 +74,7 @@ const Login = () => {
 
   const onSubmit = (data) => {
     if (data.length !== 0) {
-      window.location.href = "./home";
+      window.location.href = "https://prakash64-media.netlify.app/home";
     }
   };
   return (
