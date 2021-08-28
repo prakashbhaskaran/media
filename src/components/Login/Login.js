@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { useState } from "react";
 
@@ -62,8 +62,10 @@ const useStyles = makeStyles((theme) => ({
 const Login = () => {
   const classes = useStyles();
   const [clicked, setClicked] = useState(false);
+
   const { handleSubmit, control } = useForm();
 
+  let history = useHistory();
   const handleClick = () => {
     if (clicked) {
       setClicked(false);
@@ -74,7 +76,7 @@ const Login = () => {
 
   const onSubmit = (data) => {
     if (data.length !== 0) {
-      window.location.href = "https://prakash64-media.netlify.app/home";
+      history.push("/home");
     }
   };
   return (
@@ -158,6 +160,7 @@ const Login = () => {
               label="Show Password"
               className={classes.textField__label}
             />
+
             <Button
               type="submit"
               fullWidth
@@ -167,6 +170,7 @@ const Login = () => {
             >
               Login
             </Button>
+
             <Box display="flex" justifyContent="space-between">
               <Box>
                 <Link

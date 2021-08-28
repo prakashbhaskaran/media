@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 
 const useStyles = makeStyles((theme) => ({
@@ -54,10 +54,10 @@ const useStyles = makeStyles((theme) => ({
 const Signup = () => {
   const classes = useStyles();
   const { handleSubmit, control } = useForm();
-
+  let history = useHistory();
   const onSubmit = (data) => {
     if (data.length !== 0) {
-      window.location.href = "https://prakash64-media.netlify.app/success";
+      history.push("/success");
     }
   };
   return (
